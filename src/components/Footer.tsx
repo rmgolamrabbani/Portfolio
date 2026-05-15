@@ -35,9 +35,9 @@ const Footer = () => {
       path: "M4 4l11.733 16h4.267l-11.733 -16z"
     },
     {
-      name: "Email",
-      href: "mailto:rmgolamrabbany@gmail.com",
-      path: "m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7 M2 7v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7"
+      name: "Facebook",
+      href: "https://www.facebook.com/golam.rabbani.526983/",
+      path: "M17 2h-6a2 2 0 0 0-2 2v8H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-6a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"
     },
   ];
 

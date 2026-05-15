@@ -15,7 +15,7 @@ const Projects = () => {
       primaryTag: "React",
       secondaryTag: "Tailwind",
       demoLink: "https://assignment-08-flame.vercel.app/",
-      codeLink: "#"
+      codeLink: "https://github.com/rmgolamrabbani/assignment-08"
     },
     {
       title: "KeenKeeper",
@@ -25,7 +25,7 @@ const Projects = () => {
       primaryTag: "React",
       secondaryTag: "Tailwind",
       demoLink: "https://assignment-07-4iec.vercel.app/",
-      codeLink: "#"
+      codeLink: "https://github.com/rmgolamrabbani/Assignment-07"
     },
     {
       title: "DigiTools",
@@ -35,7 +35,7 @@ const Projects = () => {
       primaryTag: "React",
       secondaryTag: "Vite",
       demoLink: "https://assignment-06-wawh.vercel.app/",
-      codeLink: "#"
+      codeLink: "https://github.com/rmgolamrabbani/Assignment-06"
     },
     {
       title: "Bruce's Attire",
@@ -45,17 +45,17 @@ const Projects = () => {
       primaryTag: "React",
       secondaryTag: "Tailwind",
       demoLink: "https://fashion-e-commerce-rho.vercel.app/",
-      codeLink: "#"
+      codeLink: "https://github.com/rmgolamrabbani/Fashion-e-commerce"
     }
   ];
 
-  const displayedProjects = showAll ? projects.slice(0, 4) : projects.slice(0, 2);
+  const displayedProjects = showAll ? projects : projects.slice(0, 2);
 
   return (
     <section className="py-section-gap relative" id="projects">
       <div className="max-w-container-max mx-auto px-gutter">
         <div className="flex flex-col md:flex-row justify-between items-end gap-stack-md mb-16">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -64,23 +64,23 @@ const Projects = () => {
             <h2 className="text-headline-lg text-white">Featured <span className="text-primary">Creations</span></h2>
             <p className="text-body-lg text-on-surface-variant">A curated selection of complex systems and user-centric digital products.</p>
           </motion.div>
-          <motion.button 
+          <motion.button
             onClick={() => setShowAll(!showAll)}
             whileHover={{ x: 10 }}
             className="text-primary font-bold flex items-center gap-2 transition-transform"
           >
-            {showAll ? 'Show Less' : 'View All Projects'} 
+            {showAll ? 'Show Less' : 'View All Projects'}
             <span className={`material-symbols-outlined transition-transform duration-300 ${showAll ? 'rotate-180' : ''}`}>
               arrow_forward
             </span>
           </motion.button>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <AnimatePresence mode="popLayout">
             {displayedProjects.map((project, index) => (
-              <motion.div 
-                key={project.title} 
+              <motion.div
+                key={project.title}
                 layout
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -91,16 +91,16 @@ const Projects = () => {
                 className="group relative overflow-hidden rounded-3xl glass-panel aspect-[4/3]"
               >
                 <div className="absolute inset-0 overflow-hidden">
-                  <motion.img 
+                  <motion.img
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.6 }}
-                    alt={project.title} 
-                    className="w-full h-full object-cover" 
+                    alt={project.title}
+                    className="w-full h-full object-cover"
                     src={project.image}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80" />
                 </div>
-                
+
                 <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                   <div className="space-y-4">
                     <div className="flex gap-2">
@@ -112,17 +112,17 @@ const Projects = () => {
                       {project.description}
                     </p>
                     <div className="flex gap-4 pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                      <a 
-                        href={project.demoLink} 
-                        target="_blank" 
+                      <a
+                        href={project.demoLink}
+                        target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 bg-primary text-on-primary py-3 rounded-xl font-bold hover:shadow-[0_0_20px_rgba(173,198,255,0.4)] transition-all text-center"
+                        className="flex-1  bg-gradient-to-r from-cyan-500 to-fuchsia-500 text-on-primary py-3 rounded-xl font-bold hover:shadow-[0_0_20px_rgba(173,198,255,0.4)] transition-all text-center"
                       >
                         Live Demo
                       </a>
-                      <a 
-                        href={project.codeLink} 
-                        target="_blank" 
+                      <a
+                        href={project.codeLink}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="flex-1 border border-white/20 text-white py-3 rounded-xl font-bold hover:bg-white/10 transition-all text-center"
                       >

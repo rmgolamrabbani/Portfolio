@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import Magnetic from './Magnetic';
 import { cn } from '@/lib/utils';
 import MobileMenu from './MobileMenu';
+import Image from 'next/image';
 
 
 const Navbar = () => {
@@ -54,10 +55,14 @@ const Navbar = () => {
     <>
       <nav
         ref={navRef}
-        className="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-container-max rounded-2xl border border-white/5 bg-slate-950/40 backdrop-blur-md flex justify-between items-center px-8 md:px-12 py-5 z-50 shadow-2xl"
+        className="fixed top-2 left-1/2 -translate-x-1/2 w-[95%] max-w-container-max rounded-2xl border border-white/5 bg-slate-950/40 backdrop-blur-md flex justify-between items-center px-8 md:px-12 py-5 z-50 shadow-2xl"
       >
-        <div className="text-xl md:text-2xl font-black tracking-tighter text-white uppercase font-headline-lg">
-          G. Rabbani
+        <div className="text-xl  md:text-2xl font-black tracking-tighter text-white uppercase font-headline-lg">
+          <Magnetic>
+            <a href="#home">
+              <Image src="/grlogo.png" alt="Logo" width={60} height={60} />
+            </a>
+          </Magnetic>
         </div>
         <div className="hidden lg:flex items-center gap-10 font-headline-lg font-medium tracking-tight">
           {navLinks.map((link) => (
@@ -83,7 +88,7 @@ const Navbar = () => {
           <a onClick={() => {
             window.open("https://mail.google.com/mail/?view=cm&fs=1&to=rmgolamrabbany@gmail.com", "_blank");
           }}
-            className="flex items-center gap-2 bg-gradient-to-r from-blue-700 to-cyan-500 px-8 py-3 rounded-xl font-bold hover:scale-105 transition-all duration-300"
+            className="flex items-center gap-2  bg-gradient-to-r from-cyan-500 to-fuchsia-500 px-8 py-3 rounded-xl font-bold hover:scale-105 transition-all duration-300"
           >
             Hire Me
           </a>
