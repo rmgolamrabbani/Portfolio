@@ -51,8 +51,8 @@ const Navbar = () => {
 
   return (
     <>
-      <nav 
-        ref={navRef} 
+      <nav
+        ref={navRef}
         className="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-container-max rounded-2xl border border-white/5 bg-slate-950/40 backdrop-blur-md flex justify-between items-center px-8 md:px-12 py-5 z-50 shadow-2xl"
       >
         <div className="text-xl md:text-2xl font-black tracking-tighter text-white uppercase font-headline-lg">
@@ -61,11 +61,11 @@ const Navbar = () => {
         <div className="hidden lg:flex items-center gap-10 font-headline-lg font-medium tracking-tight">
           {navLinks.map((link) => (
             <Magnetic key={link.id}>
-              <a 
+              <a
                 className={cn(
                   "text-slate-400 hover:text-white transition-colors relative group py-2",
                   activeSection === link.id && "text-primary font-bold"
-                )} 
+                )}
                 href={`#${link.id}`}
               >
                 {link.name}
@@ -79,12 +79,14 @@ const Navbar = () => {
         </div>
         <div className="flex items-center gap-4">
           <Magnetic>
-            <button className="hidden md:block bg-primary text-on-primary px-8 py-3 rounded-xl font-bold hover:scale-105 transition-all shadow-[0_0_20px_rgba(173,198,255,0.3)]">
-              Hire Me
-            </button>
+            <a href="mailto:rmgolamrabbany@gmail.com">
+              <button className="hidden md:block bg-primary text-on-primary px-8 py-3 rounded-xl font-bold hover:scale-105 transition-all shadow-[0_0_20px_rgba(173,198,255,0.3)]">
+                Hire Me
+              </button>
+            </a>
           </Magnetic>
-          
-          <button 
+
+          <button
             onClick={() => setIsMenuOpen(true)}
             className="lg:hidden text-white w-12 h-12 flex items-center justify-center rounded-xl glass-panel hover:bg-white/10 transition-all"
           >
@@ -93,9 +95,9 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <MobileMenu 
-        isOpen={isMenuOpen} 
-        onClose={() => setIsMenuOpen(false)} 
+      <MobileMenu
+        isOpen={isMenuOpen}
+        onClose={() => setIsMenuOpen(false)}
         links={navLinks}
         activeSection={activeSection}
       />

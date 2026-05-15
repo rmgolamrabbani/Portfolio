@@ -33,7 +33,7 @@ const MobileMenu = ({ isOpen, onClose, links, activeSection }: MobileMenuProps) 
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
             className="fixed top-0 right-0 h-full w-[80%] max-w-sm bg-surface-container-highest border-l border-white/10 z-[70] lg:hidden p-12 flex flex-col"
           >
-            <button 
+            <button
               onClick={onClose}
               className="absolute top-8 right-8 text-white w-12 h-12 flex items-center justify-center rounded-full glass-panel hover:scale-110 transition-transform"
             >
@@ -73,10 +73,12 @@ const MobileMenu = ({ isOpen, onClose, links, activeSection }: MobileMenuProps) 
                   ))}
                 </div>
               </div>
-              
-              <button className="w-full bg-primary text-on-primary py-4 rounded-xl font-bold shadow-xl">
-                Hire Me
-              </button>
+
+              <a href="mailto:rmgolamrabbany@gmail.com" className="w-full">
+                <button className="w-full bg-primary text-on-primary py-4 rounded-xl font-bold shadow-xl">
+                  Hire Me
+                </button>
+              </a>
             </div>
           </motion.div>
         </>

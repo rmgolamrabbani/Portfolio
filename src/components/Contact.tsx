@@ -1,10 +1,18 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Magnetic from './Magnetic';
 
 const Contact = () => {
+  const [showToast, setShowToast] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 3000);
+  };
+
   return (
     <section className="py-section-gap relative" id="contact">
       <div className="max-w-container-max mx-auto px-gutter">
@@ -20,8 +28,8 @@ const Contact = () => {
             
             <div className="space-y-8 pt-8">
               {[
-                { icon: 'mail', label: 'Email me', value: 'rabbani@developer.com', color: 'text-primary' },
-                { icon: 'location_on', label: 'Location', value: 'Remote / Global', color: 'text-secondary' },
+                { icon: 'mail', label: 'Email me', value: 'rmgolamrabbany@gmail.com', color: 'text-primary' },
+                { icon: 'location_on', label: 'Location', value: 'Rajshahi.Bangladesh', color: 'text-secondary' },
               ].map((item, index) => (
                 <motion.div 
                   key={item.label}
@@ -54,7 +62,7 @@ const Contact = () => {
           </div>
           
           <div className="p-12 md:p-20 bg-slate-950/20">
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-6" onSubmit={handleSubmit}>
               {[
                 { label: 'Your Name', placeholder: 'John Doe', type: 'text' },
                 { label: 'Email Address', placeholder: 'john@example.com', type: 'email' },
@@ -62,6 +70,7 @@ const Contact = () => {
                 <div key={field.label} className="space-y-3">
                   <label className="text-[10px] text-slate-500 uppercase tracking-widest ml-1">{field.label}</label>
                   <input 
+                    required
                     className="w-full bg-white/5 border border-white/10 rounded-2xl p-5 text-white focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all placeholder:text-slate-600" 
                     placeholder={field.placeholder} 
                     type={field.type}
@@ -71,13 +80,14 @@ const Contact = () => {
               <div className="space-y-3">
                 <label className="text-[10px] text-slate-500 uppercase tracking-widest ml-1">Your Message</label>
                 <textarea 
+                  required
                   className="w-full bg-white/5 border border-white/10 rounded-2xl p-5 text-white focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all placeholder:text-slate-600" 
                   placeholder="Describe your project..." 
                   rows={4}
                 ></textarea>
               </div>
               <Magnetic>
-                <button className="w-full bg-primary text-on-primary font-bold py-5 rounded-2xl shadow-xl hover:shadow-primary/20 transition-all">
+                <button type="submit" className="w-full bg-primary text-on-primary font-bold py-5 rounded-2xl shadow-xl hover:shadow-primary/20 transition-all">
                   Send Message
                 </button>
               </Magnetic>
@@ -85,6 +95,23 @@ const Contact = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* Toast Message */}
+      <AnimatePresence>
+        {showToast && (
+          <motion.div
+            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
+            className="fixed bottom-10 left-1/2 -translate-x-1/2 z-[100]"
+          >
+            <div className="bg-primary text-on-primary px-8 py-4 rounded-2xl shadow-2xl flex items-center gap-4 border border-white/20 backdrop-blur-xl">
+              <span className="material-symbols-outlined">check_circle</span>
+              <span className="font-bold">Message sent successfully!</span>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

@@ -28,26 +28,6 @@ const Projects = () => {
       codeLink: "#"
     },
     {
-      title: "Quantum Analytics Platform",
-      description: "Real-time data processing engine with interactive visualization and predictive modeling for financial markets.",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD82LDSBlXK3DdJp7xcMDDek_ldenntIDTnB3t75y9gI7nLZasavDCKFNgCTQ3kb-8yT71G6MdDzSVEd-eg-BonsywzBsba59besdKq0yuO4ZI4swwZSe1FDNQA2CHfl0bvRUz-7QVdI1Cl9W8gQHmYSvW97K7XfevRNho0IcEsD9vDd_ptEozaAEyyPfObrwX8_SaV97Olhpk2YK5bFPgZQdt22dq6Njo4sD-S_hPUGpbnis3o2IsiCKYExhWWZ2p5IBzaLq-34g",
-      tags: ["MERN", "Chart.js"],
-      primaryTag: "MERN",
-      secondaryTag: "Chart.js",
-      demoLink: "#",
-      codeLink: "#"
-    },
-    {
-      title: "E-Commerce Engine v2",
-      description: "A scalable multi-vendor marketplace with real-time inventory management and global payment integration.",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuARvVRnzHr2nenQJm9FlBKOvdZpQgOIDI8jcdAe-cQdCp0_qQf1KHpOLjY_nb5yew8YFmXi7Y48ujl7h9tQEsd5E2UBXCjYefhsJblzFtX0_4xTkKTPfMQUP60vH8z5eq2TH4qrK6M-JPnUzgitHeK_Yj-PP2R48aqDWCqPSUMvHfDapyONQ2W2SD3hC_Oydri-FGobHGusML0mC3_Ra9jqXrptfhS9s21pYLo6Z7FpKgn9iX-qy0s3vCysmbA92sf1iJJFNjfGPA",
-      tags: ["Next.js", "Stripe"],
-      primaryTag: "Next.js",
-      secondaryTag: "Stripe",
-      demoLink: "#",
-      codeLink: "#"
-    },
-    {
       title: "DigiTools",
       description: "An all-in-one platform for premium AI tools, design assets, and templates for designers and developers.",
       image: "/projects/digitools.png",
@@ -69,7 +49,7 @@ const Projects = () => {
     }
   ];
 
-  const displayedProjects = showAll ? projects : projects.slice(0, 4);
+  const displayedProjects = showAll ? projects.slice(0, 4) : projects.slice(0, 2);
 
   return (
     <section className="py-section-gap relative" id="projects">
