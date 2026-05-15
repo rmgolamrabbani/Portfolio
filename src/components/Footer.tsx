@@ -31,7 +31,7 @@ const Footer = () => {
     },
     {
       name: "Twitter",
-      href: "#",
+      href: "https://x.com/Rabbani0101",
       path: "M4 4l11.733 16h4.267l-11.733 -16z"
     },
     {

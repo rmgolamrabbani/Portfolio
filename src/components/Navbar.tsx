@@ -6,6 +6,7 @@ import Magnetic from './Magnetic';
 import { cn } from '@/lib/utils';
 import MobileMenu from './MobileMenu';
 
+
 const Navbar = () => {
   const navRef = useRef<HTMLElement>(null);
   const [activeSection, setActiveSection] = useState('home');
@@ -78,13 +79,14 @@ const Navbar = () => {
           ))}
         </div>
         <div className="flex items-center gap-4">
-          <Magnetic>
-            <a href="mailto:rmgolamrabbany@gmail.com">
-              <button className="hidden md:block bg-primary text-on-primary px-8 py-3 rounded-xl font-bold hover:scale-105 transition-all shadow-[0_0_20px_rgba(173,198,255,0.3)]">
-                Hire Me
-              </button>
-            </a>
-          </Magnetic>
+
+          <a onClick={() => {
+            window.open("https://mail.google.com/mail/?view=cm&fs=1&to=rmgolamrabbany@gmail.com", "_blank");
+          }}
+            className="flex items-center gap-2 bg-gradient-to-r from-blue-700 to-cyan-500 px-8 py-3 rounded-xl font-bold hover:scale-105 transition-all duration-300"
+          >
+            Hire Me
+          </a>
 
           <button
             onClick={() => setIsMenuOpen(true)}
