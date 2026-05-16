@@ -85,10 +85,9 @@ const Navbar = () => {
         </div>
         <div className="flex items-center gap-4">
 
-          <a onClick={() => {
-            window.open("https://mail.google.com/mail/?view=cm&fs=1&to=rmgolamrabbany@gmail.com", "_blank");
-          }}
-            className="flex items-center gap-2  bg-gradient-to-r from-cyan-500 to-fuchsia-500 px-8 py-3 rounded-xl font-bold hover:scale-105 transition-all duration-300"
+          <a
+            href="mailto:rmgolamrabbany@gmail.com?subject=Hiring%20Request&body=Hello%20G.%20Rabbani,"
+            className="flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-fuchsia-500 px-8 py-3 rounded-xl font-bold hover:scale-105 transition-all duration-300"
           >
             Hire Me
           </a>
